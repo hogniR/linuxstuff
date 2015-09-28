@@ -1,0 +1,22 @@
+#!/bin/bash
+
+ROOTUSED=$(df | grep "/dev/sda2" | cut -d ' ' -f10)
+ROOTTOTAL=$(df | grep "/dev/sda2" | cut -d ' ' -f8)
+HOMEUSED=$(df | grep "/dev/sda3" | cut -d ' ' -f8)
+HOMETOTAL=$(df | grep "/dev/sda3" | cut -d ' ' -f7)
+
+ROOTUSED="$((ROOTUSED / 1000000)) GB"
+ROOTTOTAL="$((ROOTTOTAL / 1000000)) GB"
+HOMEUSED="$((HOMEUSED / 1000000)) GB"
+HOMETOTAL="$((HOMETOTAL / 1000000)) GB"
+
+echo $ROOTUSED $ROOTTOTAL $HOMEUSED $HOMETOTAL
+
+
+
+#if [[ "$KEYBOARD" == "us" ]]; then
+#        setxkbmap is
+#else
+#        setxkbmap us
+#fi
+

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+KEYBOARD=$(setxkbmap -query | grep "layout" | cut -d ' ' -f6)
+if [[ "$KEYBOARD" == "us" ]]; then
+	setxkbmap is
+else
+	setxkbmap us
+fi
